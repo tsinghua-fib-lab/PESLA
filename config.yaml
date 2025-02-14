@@ -1,0 +1,69 @@
+# Key
+model: PESLA
+system: Homeodomain # _4_Well, Homeodomain
+
+# Common
+cpu_num: 1
+seed: 42
+device: cpu
+data_ratio: 1.0
+train_ratio: 0.7
+data_norm: 0
+
+# Training
+_4well_phase1:
+  lr: 0.01
+  max_epoch: 200
+  val_interval: 20
+  lr_step: 1
+  lr_decay: 0.99
+  batch_size: 1024
+_4well_phase2:
+  lr: 0.001
+  max_epoch: 200
+  val_interval: 20
+  lr_step: 1
+  lr_decay: 0.99
+  batch_size: 256
+homeodomain_phase1:
+  lr: 0.001
+  max_epoch: 200
+  val_interval: 20
+  lr_step: 1
+  lr_decay: 0.99
+  batch_size: 1024
+homeodomain_phase2:
+  lr: 0.001
+  max_epoch: 100
+  val_interval: 10
+  lr_step: 1
+  lr_decay: 0.99
+  batch_size: 64
+
+# PESLA
+PESLA_4_Well:
+  K: 1000
+  nhidden: 64
+  code_dim: 32
+  softmax_temperature: 0.001
+  greedy_train: True
+PESLA_Homeodomain:
+  K: 1000
+  nhidden: 64
+  code_dim: 32
+  softmax_temperature: 0.001
+  greedy_train: True
+
+
+# 4-Well
+_4_Well:
+  feature_dim: 2
+  num_sample: 100000
+  traj_num: 10
+  lag: 100
+# Homeodomain
+Homeodomain:
+  feature_dim: 2 # 2 TICA Components
+  num_sample: 100000 # step=100000, dt=0.001us, T=step*dt=100us
+  traj_num: 1
+  lag: 110 # 1100
