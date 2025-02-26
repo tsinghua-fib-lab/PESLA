@@ -80,7 +80,15 @@ Download or simulate the datasets for the system of interest. Below are some exa
 ## 📜 Citation
 
 ```sh
-Coming soon
+@misc{li2025landscape,
+      title={Predicting the Energy Landscape of Stochastic Dynamical System via Physics-informed Self-supervised Learning}, 
+      author={Ruikun Li and Huandong Wang and Qingmin Liao and Yong Li},
+      year={2025},
+      eprint={2502.16828},
+      archivePrefix={arXiv},
+      primaryClass={cs.CE},
+      url={https://arxiv.org/abs/2502.16828}, 
+}
 ```
 
 <br>
